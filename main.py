@@ -41,13 +41,10 @@ def merge_duplicates(file):
             count = -1
             for data in row:
                 count += 1
-                if data == data_list[count]:
-                    merge_list.append(data)
+                if data == '':
+                    merge_list.append(data_list[count])
                 else:
-                    if data == '':
-                        merge_list.append(data_list[count])
-                    else:
-                        merge_list.append(data)
+                    merge_list.append(data)
             duplicate[f'{name}'] = merge_list
     merged_file = [merged_lists for merged_lists in duplicate.values()]
     return merged_file
